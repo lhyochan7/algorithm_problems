@@ -14,9 +14,8 @@ def solution(board, moves):
                         stack.pop(-1)
                         answer += 2
                 break
-
     return answer
-    # return len(answer)*2
+
 
 
 board = [[0, 0, 0, 0, 0], [0, 0, 1, 0, 3],
