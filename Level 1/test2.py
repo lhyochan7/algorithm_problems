@@ -12,6 +12,7 @@ def solution(numbers):
     return answer
 
 
+
 numbers = [2, 1, 3, 4, 1]
 
 print(solution(numbers))
