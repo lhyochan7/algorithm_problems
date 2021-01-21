@@ -8,6 +8,6 @@ def solution(participant, completion):
         if(participant[i] != completion[i]):
             answer = participant[i]
             return answer
-
+        
     answer = participant[i+1]
     return answer
