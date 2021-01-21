@@ -24,5 +24,5 @@ def solution(answers):
         answer.append(2)
     if max_count == three_count:
         answer.append(3)
-
+        
     return answer
