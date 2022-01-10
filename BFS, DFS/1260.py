@@ -16,5 +16,6 @@ from collections import deque
 #     return answer
 
 
+graph = [[] for _ in range(10)]
 
-n, m, v = map(int, input().split())
+print(graph)
