@@ -1,0 +1,6 @@
+-- https://programmers.co.kr/learn/courses/30/lessons/59412
+
+SELECT HOUR(DATETIME) as HOUR, COUNT(*) as COUNT 
+FROM ANIMAL_OUTS GROUP BY HOUR(DATETIME) 
+HAVING HOUR >= 9 and HOUR <= 19 
+ORDER BY HOUR ASC;
