@@ -8,7 +8,7 @@ class jumsu {
         return sum;
     }
 
-    static boolean isPrime(int n) {
+    boolean isPrime(int n) {
         for(int i = 2; i<n; i++) {
             if (n%i==0) {
                 return false;
