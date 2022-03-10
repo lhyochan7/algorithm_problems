@@ -1,5 +1,4 @@
 # Algorithm Problems
 
-### Programmers
-
-### Baekjoon
+### - Programmers
+### - Baekjoon
