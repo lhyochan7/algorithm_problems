@@ -1,18 +1,31 @@
 from collections import deque
 
+from sklearn.utils import check_X_y
+
 def bfs(graph, start, n):
     visited, need_visit = list(), deque()
 
     need_visit.append(start)
+
+    cx = [-1, 0, 1, 0]
+    cy = [0, 1, 0, -1]
     
-    for x in range(n):
-        for y in range(n):
-            if y < 0 or y >= n or x < 0 or x >= n:
+
+    while need_visit:
+        x, y = need_visit.popleft()
+
+        for i in range(4):
+            nx = x + cx[i]
+            ny = y + cy[i]
+
+            if ny < 0 or ny >= n or nx < 0 or nx >= n:
                 continue
 
-            print(graph[i][j], end=' ')
-        print('-------------------------')
+            visited.append((x,y))
+            need_visit.append((nx, ny))
 
+            print(graph[x][y], end=' ')
+            print('-------------------------')
 
 
     # while need_visit:
@@ -36,21 +49,28 @@ if __name__ == '__main__':
 
         for j, value in enumerate(a):
             graph[i][j] = value
-            # idx += 1
-            # num = (i*n) + idx
-            # print("n = %d  (%d, %d) = %d / num = %d" %(n, i, idx, j, num))
-            # graph[num].append(j)
+
+
+#%%
+    from collections import deque
+    d = deque()
+
+    e = (1,2)
+
+    d.append(e)
+    x, y = d.popleft()
+    print(x, y)
+#%%
 
     islands = {}
 
     for i in range(n):
         for j in range(n):
-            
-            visited = bfs(graph, node, n)
+            visited = bfs(graph, (i,j), n)
         #visited = sorted(visited)
         #print(visited)
         #islands.add(visited)
-            
+
     print(graph)
     print(islands)
 
