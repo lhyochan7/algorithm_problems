@@ -7,10 +7,10 @@ def bfs(graph, start, n):
 
     need_visit.append(start)
 
+    # Left Down Right Up
     cx = [-1, 0, 1, 0]
     cy = [0, 1, 0, -1]
     
-
     while need_visit:
         x, y = need_visit.popleft()
 
@@ -21,19 +21,10 @@ def bfs(graph, start, n):
             if ny < 0 or ny >= n or nx < 0 or nx >= n:
                 continue
 
-            visited.append((x,y))
-            need_visit.append((nx, ny))
-
-            print(graph[x][y], end=' ')
-            print('-------------------------')
-
-
-    # while need_visit:
-    #     node = need_visit.popleft()
-
-    #     if node not in visited:
-    #         visited.append(node)
-    #         need_visit.extend(graph[node])
+            if [nx, ny] not in visited and graph[nx][ny] == 1:
+                visited.append([nx,ny])
+                need_visit.append([nx, ny])
+                #print(graph[x][y], end=' ')
 
     return visited
 
@@ -50,28 +41,14 @@ if __name__ == '__main__':
         for j, value in enumerate(a):
             graph[i][j] = value
 
-
-#%%
-    from collections import deque
-    d = deque()
-
-    e = (1,2)
-
-    d.append(e)
-    x, y = d.popleft()
-    print(x, y)
-#%%
-
     islands = {}
 
     for i in range(n):
         for j in range(n):
-            visited = bfs(graph, (i,j), n)
-        #visited = sorted(visited)
-        #print(visited)
-        #islands.add(visited)
+            if graph[i][j] == 1:
+                visited = bfs(graph, [i,j], n)
+                visited = sorted(visited)
+                print(visited)
+                islands.update(visited)
 
     print(graph)
-    print(islands)
-
-# %%
