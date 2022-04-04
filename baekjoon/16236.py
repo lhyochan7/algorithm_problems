@@ -1,3 +1,9 @@
+from collections import deque
+
+def bfs(graph):
+    print(graph)
+
+
 if __name__ == "__main__":
     
     n = int(input())
@@ -8,4 +14,4 @@ if __name__ == "__main__":
         tmp = map(int, input().split())
         graph[i].extend(tmp)
 
-    print(graph)
+    bfs(graph)
