@@ -19,6 +19,7 @@ def bfs(x, y, n, board):
             if tmp_x < 0 or tmp_y < 0 or tmp_x >= n or tmp_y >= n:
                 continue
 
+            if 0 < board[tmp_x][tmp_y] <
 
     print(board)
 
