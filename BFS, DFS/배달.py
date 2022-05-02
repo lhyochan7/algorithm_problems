@@ -23,7 +23,7 @@ def solution(N, road, K):
     answer = 0
     graph = {id: [] for id in range(1, N+1)}
 
-    cost_table = [1000000000 for _ in range(N)]
+    cost_table = [float('inf') for _ in range(N)]
     
     for start, end, cost in road:
         graph[start].append((end,cost))
@@ -35,7 +35,7 @@ def solution(N, road, K):
     new_table = bfs(graph, cost_table, K, (1,0))
     
     for i in new_table:
-        if i != 1000000000:
+        if i != float('inf'):
             answer += 1
         
     return answer
