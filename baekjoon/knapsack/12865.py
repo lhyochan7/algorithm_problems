@@ -20,6 +20,6 @@ if __name__ == "__main__":
             else:
                 knapsack[i][j] = max(v + knapsack[i-1][j-w], knapsack[i-1][j])
             
-    print(knapsack)
+    #print(knapsack)
 
     print(knapsack[N][K])
