@@ -3,13 +3,11 @@ import sys
 N = int(input())
 
 graph = [[0] * cnt for cnt in range(1,N+1)]
+cost_table = [[0] * N for _ in range(N)]
 
 for i in range(N):
     input = list(map(int, sys.stdin.readline().split()))
     graph[i] = input
-
-
-cost_table = [[0] * N for _ in range(1,N+1)]
 
 for i, nodes in enumerate(graph):
     for j, node in enumerate(nodes):
