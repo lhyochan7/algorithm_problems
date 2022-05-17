@@ -10,13 +10,16 @@ for i in range(N):
     graph[i] = input
 
 for i, nodes in enumerate(graph):
-    for j, node in enumerate(nodes):
+    for j, _ in enumerate(nodes):
+				# 가장 상위 숫자
         if i == 0:
             cost_table[i][j] = graph[i][j]            
         else:
             cost_table[i][j] = max(cost_table[i-1][j-1] + graph[i][j], cost_table[i-1][j] + graph[i][j])
 
-
 answer = max(cost_table[N-1])
+
+for cost in cost_table:
+    print(cost)
 
 print(answer)
