@@ -11,7 +11,7 @@ for i in range(N):
 
 for i, nodes in enumerate(graph):
     for j, _ in enumerate(nodes):
-				# 가장 상위 숫자
+		# 가장 상위 숫자
         if i == 0:
             cost_table[i][j] = graph[i][j]            
         else:
